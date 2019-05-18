@@ -18,8 +18,6 @@ method new() {
 multi method show( | ) {*};
 
 multi method show( $row where (1 <= * <= 4), $column where (1 <= * <= 13) --> Str ) {
-    say "$row, $column";
-    say @!cards;
     return @!cards[$row-1;$column-1];
 }
 
@@ -28,10 +26,7 @@ multi method show( Pair $row-column --> Str ) {
 }
 
 method select( Pair $first, Pair $second --> Array) {
-    say $first;
-    say $second;
     return if ! self!_check( $first) or ! self!_check( $second );
-    say @!cards;
     my $first-card = self.show( $first );
     my $second-card = self.show( $second );
     if paired( $first-card, $second-card ) {
