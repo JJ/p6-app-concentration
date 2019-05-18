@@ -17,11 +17,11 @@ method new() {
 
 multi method show( | ) {*};
 
-multi method show( $row where (1 <= * <= 4), $column where (1 <= * <= 13) --> Str ) {
+multi method show( $row where (1 <= * <= 4), $column where (1 <= * <= 13) ) {
     return @!cards[$row-1;$column-1];
 }
 
-multi method show( Pair $row-column --> Str ) {
+multi method show( Pair $row-column  ) {
     return self.show($row-column.key,$row-column.value);
 }
 

@@ -11,12 +11,15 @@ my ($first-card, $second-card);
 
 my $card-number = 2;
 repeat {
-    ($first-card, $second-card) = $cards.select( 1 => 1, 1 + $card-number div 4 => 1 + $card-number % 4 );
+    ($first-card, $second-card) = $cards.select( 1 => 1, 1 + $card-number div 13 => 1 + $card-number % 13 );
+    say $second-card;
     ok( $first-card, "Extracted first card" );
     ok( $second-card, "Extracted second card" );
     $card-number++;
 } until paired( $first-card, $second-card );
 
 ok( paired( $first-card, $second-card ) );
+
+isa-ok( $cards.show( 1, 1), Any, "First card deleted" );
 
 done-testing;
