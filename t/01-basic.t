@@ -2,6 +2,8 @@ use v6.c;
 use Test;
 use App::Game::Concentration;
 
-pass "replace me";
+my App::Game::Concentration $cards .= new;
+
+isa-ok( $cards, App::Game::Concentration, "Object created" );
 
 done-testing;

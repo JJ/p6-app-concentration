@@ -1,6 +1,12 @@
 use v6.c;
 unit class App::Game::Concentration:ver<0.0.1>;
 
+has @!cards[4;13];
+
+method new() {
+    my @cards =  (("Ace", 2..10, <J Q K>).flat X <♥ ♣ ♦ ♠>).map: *.join(" ");
+    self.bless( :@cards );
+}
 
 =begin pod
 
@@ -18,7 +24,7 @@ use App::Game::Concentration;
 
 =head1 DESCRIPTION
 
-App::Game::Concentration is ...
+App::Game::Concentration is a fast and dirty implementation of Concentration: https://en.wikipedia.org/wiki/Concentration_(card_game)
 
 =head1 AUTHOR
 
