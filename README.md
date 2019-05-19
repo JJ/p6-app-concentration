@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/JJ/p6-app-concentration.svg?branch=master)](https://travis-ci.org/JJ/p6-app-concentration)
+[![Build Status](https://travis-ci.com/JJ/p6-app-concentration.svg?branch=master)](https://travis-ci.com/JJ/p6-app-concentration)
 
 NAME
 ====
@@ -11,6 +11,13 @@ SYNOPSIS
 ```perl6
 use App::Game::Concentration;
 ```
+
+Together with the library, it installs a script that you can run by
+typing 
+
+    concentration
+    
+It requests pairs of positions, and returns the cards in there. 
 
 DESCRIPTION
 ===========
