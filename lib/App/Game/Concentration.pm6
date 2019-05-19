@@ -19,7 +19,7 @@ method new() {
 proto select(|) {*};
 
 multi method select( @positions --> Array ) {
-    self.select( @positions[0], @positions[1] );
+    return self.select( @positions[0], @positions[1] );
 }
 
 multi method select( Pair $first, Pair $second --> Array) {

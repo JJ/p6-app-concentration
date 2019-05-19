@@ -21,6 +21,6 @@ repeat {
 ok( paired( $first-card, $second-card ) );
 
 isa-ok( $cards.show( 1, 1), Any, "First card deleted" );
-ok( $cards.select( [1 => 1, 4 => 13] ), "Can call deleted cards using array");
+isa-ok( $cards.select( [1 => 1, 4 => 13] ), Array, "Can call deleted cards using array");
 
 done-testing;
