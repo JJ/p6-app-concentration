@@ -1,7 +1,8 @@
 use v6.c;
-unit class App::Game::Concentration:ver<0.0.1>;
 
-has @.cards[4;13];
+use Game::Concentration::Role;
+
+unit class App::Game::Concentration:ver<0.0.1> does Game::Concentration::Role;
 
 method new() {
     my @deck =  (("Ace", 2..10, <J Q K>).flat X <♥ ♣ ♦ ♠>).map: *.join(" ");
@@ -13,16 +14,6 @@ method new() {
         }
     }
     self.bless( :@cards );
-}
-
-multi method show( | ) {*};
-
-multi method show( $row where (1 <= * <= 4), $column where (1 <= * <= 13) ) {
-    return @!cards[$row-1;$column-1];
-}
-
-multi method show( Pair $row-column  ) {
-    return self.show($row-column.key,$row-column.value);
 }
 
 method select( Pair $first, Pair $second --> Array) {
