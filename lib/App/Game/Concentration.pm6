@@ -68,6 +68,21 @@ use App::Game::Concentration;
 
 App::Game::Concentration is a fast and dirty implementation of Concentration: https://en.wikipedia.org/wiki/Concentration_(card_game)
 
+                                                                                   
+=head1 Methods and subs
+
+=head2 new()
+
+Generates a random deck.
+
+=head2 select( @positions )
+
+Takes an array of Pairs, and selects the cards in that position. If the cards are paired (same number), they are substituted by C<✖✖✖>, "eliminating" them from the deck.  
+
+=head2 sub paired( $first-card, $second-card)
+
+Checks if the cards are paired by extracting the figure from the suit.
+
 =head1 AUTHOR
 
 JJ Merelo <jjmerelo@gmail.com>

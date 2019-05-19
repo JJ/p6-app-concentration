@@ -36,6 +36,20 @@ Concentration: https://en.wikipedia.org/wiki/Concentration_(card_game)
 . This role includes the basic board that can be
 used either to record the game or to record gameplay.
 
+=head1 METHODS
+
+=head2 cards
+
+Shows the whole deck of cards
+
+=head2 show( $row, $column )
+
+Shows the card in that row (between 1 and 4) and
+column (between 1 and 13)
+
+=head2 show( Pair $row-column )
+
+The variable must contain the row as key and the column as value
 
 =head1 AUTHOR
 

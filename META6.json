@@ -9,7 +9,8 @@
     "name" : "App::Game::Concentration",
     "perl" : "6.c",
     "provides" : {
-      "App::Game::Concentration" : "lib/App/Game/Concentration.pm6"
+        "App::Game::Concentration" : "lib/App/Game/Concentration.pm6",
+        "Game::Concentration::Role" : "lib/Game/Concentration/Role.pm6"
     },
     "resources" : [ ],
     "source-url" : "https://github.com/JJ/p6-app-concentration",
