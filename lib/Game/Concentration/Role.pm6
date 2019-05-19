@@ -1,6 +1,6 @@
 use v6.c;
 
-unit role Game::Concentration::Role:ver<0.0.1>;
+unit role Game::Concentration::Role:ver<0.0.2>;
 
 has @.cards[4;13];
 

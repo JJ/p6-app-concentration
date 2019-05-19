@@ -2,7 +2,7 @@ use v6.c;
 
 use Game::Concentration::Role;
 
-unit class App::Game::Concentration:ver<0.0.1> does Game::Concentration::Role;
+unit class App::Game::Concentration:ver<0.0.2> does Game::Concentration::Role;
 
 method new() {
     my @deck =  (("Ace", 2..10, <J Q K>).flat X <♥ ♣ ♦ ♠>).map: *.join(" ");
