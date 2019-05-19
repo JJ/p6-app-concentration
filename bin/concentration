@@ -11,12 +11,11 @@ sub MAIN() {
 
     my $positions;
 
-    while $positions = prompt( "x1,y1 x2,y2 » " ) {
+    while $positions = prompt( "row-1,column-1 row-2,column-2 » " ) {
         my @coords = $positions.split(" " ).map( { .split(",") } ) ;
         my @pairs = gather for @coords -> @pos { take @pos[0].Int => @pos[1].Int };
-        say @pairs;
         my @return = $game.select( @pairs );
-        say @return;
+        say @return.join('‐');
     }
 }
         
