@@ -25,10 +25,10 @@ new()
 
 Generates a random deck.
 
-select( @positions )
---------------------
+`select( Pair $first, Pair $second --` Array )> and `select( @positions --` Array )>
+------------------------------------------------------------------------------------
 
-Takes an array of Pairs, and selects the cards in that position. If the cards are paired (same number), they are substituted by `✖✖✖`, "eliminating" them from the deck. 
+Takes an array of Pairs, and selects the cards in that position. If the cards are paired (same number), they are substituted by `✖✖✖`, "eliminating" them from the deck. If the cards are paired, the array returned will have the "Pair" trait mixed in. You can check for it using `$returned-array.?Str eq "Pair"`.
 
 sub paired( $first-card, $second-card)
 --------------------------------------
