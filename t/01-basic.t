@@ -7,6 +7,8 @@ my App::Game::Concentration $cards .= new;
 isa-ok( $cards, App::Game::Concentration, "Object created" );
 isa-ok( $cards.show( 1, 1 ), Str, "Returns first card" );
 isa-ok( $cards.show( 4, 13 ), Str, "Returns last card" );
+say $cards.show(2,2);
+like $cards.show( 2, 2 ), /\w\s/, "Cards have correct format" ;
 my ($first-card, $second-card);
 
 my $card-number = 2;

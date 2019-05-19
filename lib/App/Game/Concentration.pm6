@@ -19,16 +19,19 @@ method new() {
 proto select(|) {*};
 
 multi method select( @positions --> Array ) {
+    say @positions;
     return self.select( @positions[0], @positions[1] );
 }
 
 multi method select( Pair $first, Pair $second --> Array) {
     return if ! self!_check( $first) or ! self!_check( $second );
+    say "$first, $second";
+    say @!cards;
     my $first-card = self.show( $first );
     my $second-card = self.show( $second );
     if paired( $first-card, $second-card ) {
-        @!cards[$first.key; $first.value]:delete;
-        @!cards[$second.key; $second.value]:delete;
+        @!cards[$first.key-1; $first.value-1] = '✖✖✖';
+        @!cards[$second.key-1; $second.value-1]= '✖✖✖';
     }
     return [$first-card,$second-card];
 
