@@ -14,8 +14,9 @@ sub MAIN() {
     while $positions = prompt( "row-1,column-1 row-2,column-2 » " ) {
         my @coords = $positions.split(" " ).map( { .split(",") } ) ;
         my @pairs = gather for @coords -> @pos { take @pos[0].Int => @pos[1].Int };
-        my @return = $game.select( @pairs );
+        my @return := $game.select( @pairs );
         say @return.join('‐');
+        say "Pair" if @return.?Str eq "Pair";
     }
 }
         

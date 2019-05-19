@@ -29,8 +29,11 @@ multi method select( Pair $first, Pair $second --> Array) {
     if paired( $first-card, $second-card ) {
         @!cards[$first.key-1; $first.value-1] = '✖✖✖';
         @!cards[$second.key-1; $second.value-1]= '✖✖✖';
+        return ([$first-card,$second-card] but "Pair");
+    } else {
+        return [$first-card,$second-card]
     }
-    return [$first-card,$second-card];
+    
 
 }
 
@@ -72,9 +75,14 @@ App::Game::Concentration is a fast and dirty implementation of Concentration: ht
 
 Generates a random deck.
 
-=head2 select( @positions )
+=head2 C<select( Pair $first, Pair $second --> Array )> and C<select( @positions --> Array )>
 
-Takes an array of Pairs, and selects the cards in that position. If the cards are paired (same number), they are substituted by C<✖✖✖>, "eliminating" them from the deck.  
+Takes an array of Pairs, and selects the cards in that position. If
+                             the cards are paired (same number),
+they are substituted by C<✖✖✖>,
+"eliminating" them from the deck. If the cards are paired,
+the array returned will have the "Pair" trait mixed in. You can check
+    for it using C<$returned-array.?Str eq "Pair">.
 
 =head2 sub paired( $first-card, $second-card)
 
