@@ -1,0 +1,22 @@
+#!/usr/bin/env perl6
+
+use v6.c;
+
+use App::Game::Concentration;
+
+
+sub MAIN() {
+   
+    my App::Game::Concentration $game .= new ;
+
+    my $positions;
+
+    while $positions = prompt( "x1,y1 x2,y2 » " ) {
+        my @coords = $positions.split(" " ).map( { .split(",") } ) ;
+        my @pairs = gather for @coords -> @pos { take @pos[0].Int => @pos[1].Int };
+        say @pairs;
+        my @return = $game.select( @pairs );
+        say @return;
+    }
+}
+        

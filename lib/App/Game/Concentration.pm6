@@ -25,7 +25,7 @@ multi method select( @positions --> Array ) {
 
 multi method select( Pair $first, Pair $second --> Array) {
     return if ! self!_check( $first) or ! self!_check( $second );
-    say "$first, $second";
+    say "select $first, $second";
     say @!cards;
     my $first-card = self.show( $first );
     my $second-card = self.show( $second );
@@ -54,7 +54,7 @@ method !_check( Pair $to-check --> Bool ) {
 
 =head1 NAME
 
-App::Game::Concentration - blah blah blah
+App::Game::Concentration - Implementation of the game of Concentration
 
 =head1 SYNOPSIS
 
